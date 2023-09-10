@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.ModuleDetailView"
+             Title="ModuleDetailView">
+    <VerticalStackLayout>
+        <Label Text="Name" FontSize="Large" />
+        <Label Text="{Binding Path=Name, Mode=TwoWay}" />
+        <Label Text="Description" FontSize="Large" />
+        <Label Text="{Binding Path=Description, Mode=TwoWay}" />
+        <Label Text="Content" FontSize="Large" />
+        <ListView ItemsSource="{Binding Content}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            Text="Back"
+            Clicked="BackButtonClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

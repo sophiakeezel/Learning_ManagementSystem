@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.AddAssignmentToGroupView"
+             Title="Add Assignment">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label Text="Name" />
+            <Entry x:Name="AssignmentNameEntry" Placeholder="Enter assignment name" />
+            
+            <Label Text="Description" />
+            <Entry x:Name="AssignmentDescriptionEntry" Placeholder="Enter assignment description" />
+
+            <Label Text="Total Available Points" />
+            <Entry x:Name="TotalAvailablePointsEntry" Placeholder="Enter total available points" />
+
+            <Label Text="Due Date" />
+            <DatePicker x:Name="DueDatePicker" />
+
+            <Button Text="Add Assignment" Clicked="AddAssignmentClicked" />
+
+            <Label Text="Assignments" />
+    <ListView x:Name="AssignmentListView" ItemSelected="OnAssignmentSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding Name}" Detail="{Binding Description}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+            <Button Text="Edit Assignment" Clicked="EditAssignmentClicked" />
+            <Button Text="Remove Assignment" Clicked="RemoveAssignmentClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+

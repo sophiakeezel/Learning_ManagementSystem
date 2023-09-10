@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.AnnouncementDetailView"
+             Title="AnnouncementDetailView">
+    <VerticalStackLayout>
+        <Label Text="Title" FontSize="Large" />
+        <Label Text="{Binding Path=Name, Mode=TwoWay}" />
+        <Label Text="Description" FontSize="Large" />
+        <Label Text="{Binding Path=Description, Mode=TwoWay}" />
+    </VerticalStackLayout>
+</ContentPage>

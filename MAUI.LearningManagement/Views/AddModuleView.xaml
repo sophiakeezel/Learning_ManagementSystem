@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.AddModuleView"
+             Title="Add Module">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label Text="Name" />
+            <Entry x:Name="NameEntry" Placeholder="Enter module name" />
+            
+            <Label Text="Description" />
+            <Editor x:Name="DescriptionEditor" Placeholder="Enter module description" />
+
+            <!-- Add Content -->
+        <Label Text="Content Type" />
+        <Picker x:Name="ContentTypePicker" Title="Select content type">
+        <Picker.ItemsSource>
+        <x:Array Type="{x:Type x:String}">
+                <x:String>Assignment</x:String>
+                <x:String>Page</x:String>
+                <x:String>File</x:String>
+        </x:Array>
+        </Picker.ItemsSource>
+        </Picker>
+
+        <Label Text="Content Name" />
+        <Entry x:Name="ContentNameEntry" Placeholder="Enter content name" />
+
+        <Label Text="Content Description" />
+        <Entry x:Name="ContentDescriptionEntry" Placeholder="Enter content description" />
+
+        <Label Text="Assignment, Page or File Path" />
+        <Entry x:Name="ContentPathEntry" Placeholder="Enter assignment, page or file path" IsVisible="False" />
+
+        <Button Text="Add Content" Clicked="AddContentClicked" />
+
+
+        <Button x:Name="AddModuleButton" Text="Add Module" Clicked="AddModuleClicked" />
+
+        <!-- Edit/Delete Modules -->
+        <Label Text="Existing Modules" />
+        <Picker x:Name="ModulePicker" Title="Select a module">
+        <Picker.ItemDisplayBinding>
+            <Binding Path="Name" />
+        </Picker.ItemDisplayBinding>
+        </Picker>
+
+        <Button Text="Edit Module" Clicked="EditModuleClicked" />
+        <Button Text="Delete Module" Clicked="DeleteModuleClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

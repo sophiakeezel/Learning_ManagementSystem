@@ -1,0 +1,72 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.StudentDetailView"
+             Title="Student Detail"
+              x:Name="studentDetailPage">
+     <StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Name:" FontAttributes="Bold" WidthRequest="100" />
+            <Label Text="{Binding Student.Name}" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="ID:" FontAttributes="Bold" WidthRequest="100" />
+            <Label Text="{Binding Student.Id}" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Classification:" FontAttributes="Bold" WidthRequest="100" />
+            <Label Text="{Binding Student.Classification}" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="GPA:" FontAttributes="Bold" WidthRequest="100" />
+            <Label Text="{Binding Student.GPA, StringFormat='{0:F2}'}" />
+        </StackLayout>        
+         <Label Text="Enrolled Courses:" FontAttributes="Bold" />
+            <ListView ItemsSource="{Binding EnrolledCourses}"
+          HasUnevenRows="True" ItemSelected="EnrolledCoursesListView_ItemSelected">
+        <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Name}" />
+                    <Button Text="Drop" 
+                            Command="{Binding Source={x:Reference studentDetailPage}, Path=BindingContext.DropCommand}" 
+                            CommandParameter="{Binding}" />
+                </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+        <Label Text="Available Courses:" FontAttributes="Bold" />
+        <ListView ItemsSource="{Binding AvailableCourses}"
+                  HasUnevenRows="True"
+                  x:Name="AvailableCoursesListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Name}" />
+                            <Button Text="Enroll" Command="{Binding Source={x:Reference studentDetailPage}, Path=BindingContext.EnrollCommand}" CommandParameter="{Binding}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="Past Courses:" FontAttributes="Bold" />
+        <ListView ItemsSource="{Binding PastCourses}"
+          HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                         <Label Text="{Binding Name}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+         </StackLayout>
+</ContentPage>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.SubmissionDetailView">
+    <VerticalStackLayout>
+         <Label Text="Student" FontSize="Large" />
+        <Label Text="{Binding Path=StudentName}" />
+        <Label Text="Name" FontSize="Large" />
+        <Label Text="{Binding Path=Assignment.Name}" />
+        <Label Text="Content" FontSize="Large" />
+        <Label Text="{Binding Path=Content}" />
+        <Label Text="Grade" FontSize="Large" />
+        <Label Text="{Binding Path=Grade}" />
+    </VerticalStackLayout>
+    </ContentPage>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.AddAssignmentView"
+             Title="Add Assignment Group">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label Text="Name" />
+            <Entry x:Name="NameEntry" Placeholder="Enter assignment group name" />
+            
+            <Label Text="Weight (in percentage)" />
+            <Entry x:Name="WeightEntry" Placeholder="Enter assignment group weight" />
+
+            <Label Text="Select Assignment Group" />
+            <Picker x:Name="AssignmentGroupPicker" Title="Select an assignment group" />
+            <Button Text="Add Assignment to Group" Clicked="AddAssignmentToGroupClicked" />
+
+            <Button Text="Add Group" Clicked="AddAssignmentGroupClicked" />
+            <Button Text="Edit Assignment Group" Clicked="EditAssignmentGroupClicked" />
+            <Button Text="Delete Assignment Group" Clicked="DeleteAssignmentGroupClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
+

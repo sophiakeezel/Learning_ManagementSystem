@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.AddAnnouncementView"
+             Title="Add Announcement">
+    <ScrollView>
+        <VerticalStackLayout Padding="20">
+            <Label Text="Announcements" />
+            <Picker x:Name="AnnouncementPicker" SelectedIndexChanged="AnnouncementPickerSelectedIndexChanged" />
+
+            <Label Text="Name" />
+            <Entry x:Name="NameEntry" Placeholder="Enter announcement name" />
+            
+            <Label Text="Description" />
+            <Editor x:Name="DescriptionEditor" Placeholder="Enter announcement description" />
+
+            <Button x:Name="AddOrEditAnnouncementButton" Text="Add Announcement" Clicked="AddAnnouncementClicked" />
+            <Button Text="Delete Announcement" Clicked="DeleteAnnouncementClicked" />
+ 
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

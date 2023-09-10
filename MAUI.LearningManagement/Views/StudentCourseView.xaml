@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.StudentCourseView"
+             Title="StudentCourseView">
+    <StackLayout Spacing="10" Padding="20">
+    
+    <StackLayout>
+        <Label Text="Course Prefix" FontSize="Large" />
+        <Label Text="{Binding Prefix}" FontSize="Medium"/>
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="Course Name" FontSize="Large" />
+        <Label Text="{Binding Name}" FontSize="Medium"/>
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="Course Description" FontSize="Large" />
+        <Label Text="{Binding Description}" FontSize="Medium"/>
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="Credit Hours" FontSize="Large" />
+        <Label Text="{Binding CreditHours}" FontSize="Medium"/>
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="Course Code" FontSize="Large" />
+        <Label Text="{Binding Code}" FontSize="Medium"/>
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="Room" FontSize="Large" />
+        <Label Text="{Binding Room}" FontSize="Medium"/>
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="Semester" FontSize="Large" />
+        <Label Text="{Binding SemesterString}" FontSize="Medium"/>
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="Roster" FontSize="Large" />
+        <ListView ItemsSource="{Binding Roster}" />
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="Announcements" FontSize="Large" />
+        <ListView ItemsSource="{Binding Announcements}" ItemSelected="AnnouncementsListView_ItemSelected"/>
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="Assignments" FontSize="Large" />
+        <ListView ItemsSource="{Binding AssignmentGroups}" ItemSelected="AssignmentsListView_ItemSelected" />
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="Modules" FontSize="Large" />
+        <ListView ItemsSource="{Binding Modules}" ItemSelected="ModulesListView_ItemSelected"/>
+    </StackLayout>
+    
+    <StackLayout>
+        <Label Text="My Submissions" FontSize="Large" />
+        <ListView ItemsSource="{Binding StudentSubmissions}" SelectedItem="{Binding SelectedSubmission}" ItemSelected="SubmissionsListView_ItemSelected" />
+    </StackLayout>
+    
+    <StackLayout>
+        <Button Text="Add Submission" Clicked="AddSubmissionClicked"/>
+        <Button Text="Remove Submission" Clicked="RemoveSubmissionClicked"/>
+        <Button Text="Cancel" Clicked="CancelClicked"/>
+    </StackLayout>
+
+</StackLayout>
+</ContentPage>

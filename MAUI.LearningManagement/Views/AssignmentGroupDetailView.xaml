@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.AssignmentGroupDetailView"
+             Title="AssignmentGroupDetailView">
+    <VerticalStackLayout>
+      <Label Text="Name" FontSize="Large" />
+        <Label Text="{Binding Path=Name, Mode=TwoWay}" />
+        <Label Text="Weight" FontSize="Large" />
+        <Label Text="{Binding Path=Weight, Mode=TwoWay, StringFormat='{0:P}'}" />
+        <Label Text="Assignments" FontSize="Large" />
+        <ListView ItemsSource="{Binding Assignments}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding DueDate, StringFormat='{0:d}'}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            Text="Back"
+            Clicked="BackButtonClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

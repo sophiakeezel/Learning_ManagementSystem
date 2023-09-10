@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.SubmissionGradingView"
+             Title="Grade Submission">
+    <VerticalStackLayout>
+        <Label Text="Student Name" FontSize="Large" />
+        <Label Text="{Binding StudentName}" />
+        <Label Text="Assignment Name" FontSize="Large" />
+        <Label Text="{Binding AssignmentName}" />
+        <Label Text="Grade" FontSize="Large" />
+        <Entry Text="{Binding Grade, Mode=TwoWay}" Keyboard="Numeric" />
+        <Button Text="Save"
+                Clicked="SaveButton_Clicked" />
+        <Button Text="Cancel"
+                Clicked="CancelButton_Clicked" />
+    </VerticalStackLayout>
+</ContentPage>
+

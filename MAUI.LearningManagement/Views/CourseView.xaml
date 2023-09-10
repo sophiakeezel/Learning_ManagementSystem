@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.CourseView"
+             Title="Course Info">
+    <VerticalStackLayout>
+        <Label Text="Prefix" FontSize="Large" />
+        <Label Text="{Binding Path= Prefix, Mode=TwoWay}"/>
+        <Label Text="Name" FontSize="Large" />
+        <Label Text="{Binding Path= Name, Mode=TwoWay}"/>
+        <Label Text="Description" FontSize="Large" />
+        <Label Text="{Binding Path= Description, Mode=TwoWay}"/>
+        <Label Text="Credit Hours" FontSize="Large" />
+        <Label Text="{Binding Path= CreditHours, Mode=TwoWay}"/>
+        <Label Text="Code" FontSize="Large"  />
+        <Label Text="{Binding Path= Code, Mode=TwoWay}"/>
+        <Label Text="Room" FontSize="Large" />
+        <Label Text="{Binding Path= Room, Mode=TwoWay}"/>
+        <Label Text="Semester" FontSize="Large" />
+        <Label Text="{Binding Path= SemesterString, Mode=TwoWay}"/>
+        <Label Text="Roster" FontSize="Large" />
+        <ListView ItemsSource="{Binding Roster}" />
+        <Label Text="Announcements" FontSize="Large"  />
+        <ListView ItemsSource="{Binding Announcements}" ItemSelected="AnnouncementsListView_ItemSelected"/>
+        <Label Text="Assignments" FontSize="Large" />
+        <ListView ItemsSource="{Binding AssignmentGroups}" ItemSelected="AssignmentsListView_ItemSelected" />
+        <Label Text="Modules" FontSize="Large" />
+        <ListView ItemsSource="{Binding Modules}" ItemSelected="ModulesListView_ItemSelected"/>
+        <Label Text="Submissions" FontSize="Large" />
+        <ListView ItemsSource="{Binding Submissions}" ItemSelected="SubmissionsListView_ItemSelected"/>
+        <Button
+            Text="Cancel"
+            Clicked="CancelClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

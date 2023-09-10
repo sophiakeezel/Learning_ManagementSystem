@@ -1,0 +1,11 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUI.LearningManagement.Views.StudentView"
+             Title="Student View">
+<VerticalStackLayout>    
+       <Label Text="Enter Student Id:" />
+        <Entry x:Name="StudentIdEntry" />
+        <Button Text="Enter" Clicked="EnterClicked" />
+        <Button Text="Cancel" Clicked="CancelClicked"/>
+</VerticalStackLayout>
+</ContentPage>
